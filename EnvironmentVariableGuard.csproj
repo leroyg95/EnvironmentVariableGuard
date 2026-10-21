@@ -15,4 +15,8 @@
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="EnvironmentVariableGuard.Tests\**\*.cs" />
+  </ItemGroup>
+
 </Project>

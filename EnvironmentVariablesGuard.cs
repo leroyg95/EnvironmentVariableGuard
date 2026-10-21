@@ -25,7 +25,7 @@ public static class Guard
         if (missingVariables.Count > 0)
         {
             throw new InvalidOperationException(
-                $"[EnvGuard] Missing required environment variable(s):\n - {string.Join("\n - ", missingVariables)}"
+                $"[EnvironmentVariableGuard] Missing required environment variable(s):\n - {string.Join("\n - ", missingVariables)}"
             );
         }
     }
@@ -44,7 +44,7 @@ public static class Guard
         if (value != null && !Regex.IsMatch(value, regexPattern))
         {
             var message = customErrorMessage ?? $"Environment variable '{variableName}' does not match the expected pattern ({regexPattern}).";
-            throw new InvalidOperationException($"[EnvGuard] {message}");
+            throw new InvalidOperationException($"[EnvironmentVariableGuard] {message}");
         }
     }
 }
